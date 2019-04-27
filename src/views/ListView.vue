@@ -1,9 +1,7 @@
 <template>
-    <div class="todo__section">
-        <div>
-            <todo-input></todo-input>
-            <todo-list></todo-list>
-        </div> 
+    <div>
+        <todo-input></todo-input>
+        <todo-list></todo-list>
     </div>
 </template>
 
@@ -20,12 +18,4 @@ components : {
 </script>
 
 <style scoped>
-.todo__section {
-    flex-grow: 2; 
-    border:1px solid #000; 
-}
-
-.todo__section > div {
- margin: 20px 50px;
-}
 </style>

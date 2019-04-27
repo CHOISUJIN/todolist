@@ -2,8 +2,8 @@
   <div id="app">
     <todo-header></todo-header>
     <div class="container">
-      <folder-list></folder-list>
-      <router-view></router-view>
+       <folder-list class="todo__nav"></folder-list>
+       <router-view class="todo__section"></router-view>
     </div>
   </div>
 </template>
@@ -34,5 +34,16 @@ html, body{
   display: flex;
   justify-content: space-between;
   height: 100vh;
+}
+
+.todo__nav { 
+    flex-grow: 0.45;
+    border:1px solid #000;   
+}
+
+.todo__section {
+    flex-grow: 2; 
+    border:1px solid #000; 
+    padding: 20px;
 }
 </style>
