@@ -1,28 +1,51 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <todo-header></todo-header>
+    <div class="container">
+       <folder-list class="todo__nav"></folder-list>
+       <router-view class="todo__section"></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TodoHeader from './components/TodoHeader.vue'
+import FolderList from './components/FolderList.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+      TodoHeader,
+      FolderList
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html, body{
+  height: 100%; 
+  width: 100%; 
+  padding: 0; 
+  margin: 0;
+  font-size: 18px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.todo__nav { 
+    flex-grow: 0.45;
+    border:1px solid #000;   
+    display: flex;
+    flex-direction: column;
+}
+
+.todo__section {
+    flex-grow: 2; 
+    border:1px solid #000; 
+    padding: 20px;
 }
 </style>
