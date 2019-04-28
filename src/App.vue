@@ -39,6 +39,8 @@ html, body{
 .todo__nav { 
     flex-grow: 0.45;
     border:1px solid #000;   
+    display: flex;
+    flex-direction: column;
 }
 
 .todo__section {

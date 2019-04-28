@@ -28,6 +28,7 @@ export default {
 
 ul {
     padding-left: 20px;
+    width: 100%;
 }
 
 li {
@@ -51,7 +52,7 @@ ul > li > i {
 }
 
 .folder-list__footer{
-    
+ margin-top:auto;
 }
 
 .folder-list__footer > button {
