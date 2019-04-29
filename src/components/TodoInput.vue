@@ -15,7 +15,6 @@ export default {
 .todo__input { 
     padding: 20px 0;
     position: relative;
-    
 }
 
 .todo__input .todo__input-text {
