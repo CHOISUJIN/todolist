@@ -2,11 +2,10 @@
     <div>
         <div class="folder-list">
             <ul>
-                <li><i class="fas fa-list-ul"></i><router-link v-bind:to="`/forders/1`" class="active">폴더1</router-link> </li>
-                <li><i class="fas fa-list-ul"></i><router-link v-bind:to="`/forders/1`">폴더1</router-link> </li>
-                <li><i class="fas fa-list-ul"></i><router-link v-bind:to="`/forders/1`">폴더1</router-link> </li>
-                <li><i class="fas fa-list-ul"></i><router-link v-bind:to="`/forders/1`">폴더1</router-link> </li>
-                <li><i class="fas fa-list-ul"></i><router-link v-bind:to="`/forders/1`">폴더1</router-link> </li>
+                <li v-for="(item, index) in getFolderList" v-bind:key="index">
+                    <i class="fas fa-list-ul"></i>
+                    <router-link v-bind:to="`/forders/${item}`">{{item}}</router-link> 
+                </li>
             </ul>
         </div>
         <div class="folder-list__footer">
@@ -18,8 +17,22 @@
     </div>
 </template>
 <script>
-export default {
+import { mapGetters } from 'vuex';
 
+
+export default {
+    created() {
+        this.$store.dispatch("fetchFolder")
+        .then(()=> {
+            
+        })
+        .catch(error => {
+          alert(error);
+        });
+    },
+    computed : {
+        ...mapGetters(['getFolderList'])
+    }
 }
 </script>
 
