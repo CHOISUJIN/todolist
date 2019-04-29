@@ -1,5 +1,3 @@
-//import axios from "axios";
-
 // 폴더가져오기
 function getFolderList() {
     return new Promise(function(resolve, reject){
