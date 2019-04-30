@@ -2,7 +2,6 @@
     <div class="todo__input">
         <input type="text" class="todo__input-text">
         <span class="check-icon"><i class="fas fa-check"></i></span>
-        <!-- <button type="button" class="todo__input__botton"> 추가 </button> -->
     </div>
 </template>
 
@@ -16,7 +15,6 @@ export default {
 .todo__input { 
     padding: 20px 0;
     position: relative;
-    
 }
 
 .todo__input .todo__input-text {

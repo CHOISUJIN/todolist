@@ -1,25 +1,10 @@
 <template>
     <div class="todo-list">
         <ul>
-            <li> 
+            <li v-for="(item, index) in getTodoList" v-bind:key="index"> 
                 <input type="checkbox"/>
-                로우니 잔소리 듣기 
+                {{item}}
                 <span class="remove-icon">
-                     <i class="fas fa-times"></i>
-                </span>
-                
-            </li>
-            <li> 
-                <input type="checkbox"/>
-                로우니한테 혼나기 
-                 <span class="remove-icon">
-                     <i class="fas fa-times"></i>
-                </span>
-            </li>
-            <li> 
-                <input type="checkbox"/>
-                로우니한테 칭찬받기 
-                 <span class="remove-icon">
                      <i class="fas fa-times"></i>
                 </span>
             </li>
@@ -28,16 +13,29 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
-
+    computed : {
+        ...mapGetters(["getTodoList"])
+    },
+    methods: {
+        getTodos() {
+          const id =this.$route.params.id;
+          this.$store.dispatch("fetchTodoList", id);
+        }
+    },
+    created() {
+        this.getTodos();
+    },
+    watch: {
+    '$route.params.id' () {
+       this.getTodos();
+    }
+  },
 }
 </script>
 
 <style scoped>
-.todo-list {
-   
-}
-
 .todo-list ul {
     padding: 0;
 }
